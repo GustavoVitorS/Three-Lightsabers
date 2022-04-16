@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(56, 56, 56);
+}
+
+.lightsaber {
+  position: relative;
+  color: #FFF;
+  margin-right: 30px;
+}
+
+.lightsaber input[type="checkbox"] {
+  opacity: 0;
+}
+
+.lightsaber label {
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  width: 15px;
+  background: #DDD;
+  border-top: 6px gray solid;
+  border-bottom: 6px gray solid;
+  border-radius: 5px;
+  background: linear-gradient(to right,
+      rgba(226, 226, 226, 1) 0%,
+      rgba(219, 219, 219, 1) 50%,
+      rgba(209, 209, 209, 1) 51%,
+      rgba(254, 254, 254, 1) 100%);
+}
+
+.lightsaber .plasma {
+  position: absolute;
+  bottom: 65px;
+  left: 2.5px;
+  border-radius: 12px 12px 0 0;
+  background: green;
+  height: 0px;
+  width: 10px;
+  filter: blur(1px);
+  transition: 0.7s height;
+  -webkit-transition: 0.7s height;
+  -ms-transition: 0.7s height;
+  -moz-transition: 0.7s height;
+  -o-transition: 0.7s height;
+}
+
+/* Using sibling selecter */
+.lightsaber input[type="checkbox"]:checked~.plasma {
+  height: 250px;
+}
+
+/* put the three colors you want in the lightsabers */
+
+.lightsaber--yoda .plasma {
+  background: rgb(6, 218, 84);
+  background: linear-gradient(to right,
+      rgb(6, 218, 84) 0%,
+      rgb(254, 254, 254) 30%,
+      rgb(254, 254, 254) 50%,
+      rgb(254, 254, 254) 70%,
+      rgb(6, 218, 84) 100%);
+}
+
+.lightsaber--vader .plasma {
+  background: rgb(225, 255, 0);
+  background: linear-gradient(to right,
+      rgb(225, 255, 0) 0%,
+      rgba(254, 254, 254, 1) 30%,
+      rgba(254, 254, 254, 1) 50%,
+      rgba(254, 254, 254, 1) 70%,
+      rgb(225, 255, 0) 100%);
+}
+
+.lightsaber--windu .plasma {
+  background: rgb(3, 158, 209);
+  background: linear-gradient(to right,
+      rgb(3, 158, 209) 0%,
+      rgba(254, 254, 254, 1) 30%,
+      rgba(254, 254, 254, 1) 50%,
+      rgba(254, 254, 254, 1) 70%,
+      rgb(3, 158, 209) 100%);
+}
